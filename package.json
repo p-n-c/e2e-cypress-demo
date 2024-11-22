@@ -1,0 +1,28 @@
+{
+  "name": "e2e-client-demo",
+  "version": "0.0.1",
+  "description": "E2E client demo for workshop",
+  "author": "People and Code",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . && prettier --check . && stylelint '**/*.{css,scss}'",
+    "static": "cp src/robots.txt dist/robots.txt",
+    "start": "parcel && npm run static",
+    "cy:open": "cypress open"
+  },
+  "source": [
+    "./src/index.html"
+  ],
+  "devDependencies": {
+    "cypress": "^13.16.0",
+    "eslint": "latest",
+    "eslint-plugin-cypress": "^4.1.0",
+    "parcel": "latest",
+    "prettier": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest"
+  },
+  "dependencies": {
+    "@danhartley/emissions": "^0.1.2"
+  }
+}
