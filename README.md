@@ -75,3 +75,7 @@ To add intellisense, we created a `jsconfig.json` file and added:
   "include": ["./node_modules/cypress", "cypress/**/*.js"]
 }
 ```
+
+## axe
+
+List of Axe HTML 4.8 [rules](https://dequeuniversity.com/rules/axe/4.8) from Deque University
