@@ -79,3 +79,7 @@ To add intellisense, we created a `jsconfig.json` file and added:
 ## axe
 
 List of Axe HTML 4.8 [rules](https://dequeuniversity.com/rules/axe/4.8) from Deque University
+
+## baseUrl
+
+Add a `baseUrl` to the `e2e` property in config when [baseUrl not set](https://docs.cypress.io/app/references/configuration#baseUrl-is-not-set)
