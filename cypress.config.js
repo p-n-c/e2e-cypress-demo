@@ -2,7 +2,7 @@ import { defineConfig } from 'cypress'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
       on('task', {
         log(message) {
           console.log(message)
@@ -17,5 +17,12 @@ export default defineConfig({
       })
     },
     baseUrl: 'http://localhost:1234',
+  },
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true,
   },
 })

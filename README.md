@@ -66,6 +66,8 @@ This worked as expected. We then changed the site to the default URL used when t
 - Change the site to visit in the spec to <http://localhost:1234> (or the allocated port if 1234 is in use)
 - Re-run the spec in the Cypress test runner
 
+### Continued setup
+
 ## Intellisense
 
 To add intellisense, we created a `jsconfig.json` file and added:
@@ -91,3 +93,9 @@ Run unit tests in headless mode e.g.
 ```node
 cypress run --browser chrome --spec cypress/e2e/unit-tests.cy.js
 ```
+
+## Reporters
+
+Add mochawesome reporter:
+
+`npm i -D mochawesome`

@@ -20,6 +20,7 @@
     "cypress-axe": "^1.5.0",
     "eslint": "latest",
     "eslint-plugin-cypress": "^4.1.0",
+    "mochawesome": "^7.1.3",
     "parcel": "latest",
     "prettier": "latest",
     "stylelint": "latest",
