@@ -9,7 +9,12 @@
     "static": "cp src/robots.txt dist/robots.txt",
     "start": "parcel && npm run static",
     "cy:open": "cypress open",
-    "e2e:chrome": "cypress run --browser chrome"
+    "e2e:chrome": "cypress run --browser chrome",
+    "report:cleanup": "npx rimraf ./cypress/report",
+    "report:runspecs": "npx cypress run --reporter mochawesome",
+    "report:merge": "npx mochawesome-merge ./cypress/report/*.json -o ./cypress/report/output.json",
+    "report:generate": "npx marge ./cypress/report/output.json -o ./cypress/report//mochawesome-report",
+    "report": "npm run report:cleanup && npm run report:runspecs || true && npm run report:merge && npm run report:generate"
   },
   "source": [
     "./src/index.html"
@@ -21,6 +26,7 @@
     "eslint": "latest",
     "eslint-plugin-cypress": "^4.1.0",
     "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
     "parcel": "latest",
     "prettier": "latest",
     "stylelint": "latest",

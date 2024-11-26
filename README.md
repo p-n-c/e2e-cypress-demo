@@ -100,6 +100,30 @@ Add mochawesome reporter:
 
 `npm i -D mochawesome`
 
-From the command line e.g.
+From the command line e.g. single spec
 
 `npm run e2e:chrome -- --spec  cypress/e2e/axe.cy.js --reporter mochawesome`
+
+From the command line e.g. multiple specs
+
+`npx cypress run --reporter mochawesome`
+
+To merge reports:
+
+`npx mochawesome-merge ./cypress/report/*.json -o ./cypress/report/output.json`
+
+To create a single HTML report from the merge json:
+
+`npx marge ./cypress/report/output.json -o cypress/report//mochawesome-report`
+
+Single command:
+
+First require rimraf
+
+`npm i rimraf`
+
+The run
+
+`npm run report`
+
+NB in `npm run report:runspecs || true` the boolean ensures all scripts run even if tests fail
