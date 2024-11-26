@@ -90,9 +90,7 @@ Add a `baseUrl` to the `e2e` property in config when [baseUrl not set](https://d
 
 Run unit tests in headless mode e.g.
 
-```node
-cypress run --browser chrome --spec cypress/e2e/unit-tests.cy.js
-```
+`npm run e2e:chrome -- --spec cypress/e2e/unit-tests.cy.js`
 
 ## Reporters
 

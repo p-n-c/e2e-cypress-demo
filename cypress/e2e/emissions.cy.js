@@ -1,12 +1,19 @@
 import { constants } from '../support/variables'
 
 describe('Network emissions check', () => {
-  it('should calculate emissions from network requests', () => {
-    cy.collectNetworkResponses('/')
-      .calculateEmissions(constants.DOMAIN)
-      .then((calculation) => {
-        expect(calculation.emissions).to.be.lte(constants.MAX_EMISSIONS)
-        expect(calculation.greenHosting).to.be.false
+  context('Given I am on the home page', () => {
+    beforeEach(() => {
+      cy.collectNetworkResponses('/').as('responses')
+    })
+    it('Then calculated emissions from network requests should be less than 1 g of Co2', () => {
+      cy.get('@responses').then((data) => {
+        cy.wrap(data)
+          .calculateEmissions(constants.DOMAIN)
+          .then((calculation) => {
+            expect(calculation.emissions).to.be.lte(constants.MAX_EMISSIONS)
+            expect(calculation.greenHosting).to.be.false
+          })
       })
+    })
   })
 })

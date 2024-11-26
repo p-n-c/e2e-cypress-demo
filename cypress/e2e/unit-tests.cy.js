@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import { extractHostname } from '../support/utils.js'
 
 describe('Unit tests', () => {
@@ -8,7 +6,7 @@ describe('Unit tests', () => {
     expect(extractHostname, 'extractHostname').to.be.a('function')
   })
 
-  it('utils', () => {
+  it('The utils function tests should pass', () => {
     const testCases = [
       ['http://localhost:1234/', 'localhost:1234'],
       ['https://the-public-good.com/', 'the-public-good.com'],
