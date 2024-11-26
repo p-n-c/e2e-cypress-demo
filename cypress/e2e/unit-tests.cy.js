@@ -20,12 +20,7 @@ describe('Unit tests', () => {
 
     testCases.forEach(([input, expected]) => {
       const result = extractHostname(input)
-      console.log('result: ', result)
       expect(result).equal(expected)
     })
-
-    expect(extractHostname('https://the-public-good.com/')).equal(
-      'the-public-good.com'
-    )
   })
 })

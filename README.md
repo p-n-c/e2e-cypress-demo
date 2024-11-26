@@ -83,3 +83,11 @@ List of Axe HTML 4.8 [rules](https://dequeuniversity.com/rules/axe/4.8) from Deq
 ## baseUrl
 
 Add a `baseUrl` to the `e2e` property in config when [baseUrl not set](https://docs.cypress.io/app/references/configuration#baseUrl-is-not-set)
+
+## Headless
+
+Run unit tests in headless mode e.g.
+
+```node
+cypress run --browser chrome --spec cypress/e2e/unit-tests.cy.js
+```
