@@ -99,3 +99,7 @@ cypress run --browser chrome --spec cypress/e2e/unit-tests.cy.js
 Add mochawesome reporter:
 
 `npm i -D mochawesome`
+
+From the command line e.g.
+
+`npm run e2e:chrome -- --spec  cypress/e2e/axe.cy.js --reporter mochawesome`
