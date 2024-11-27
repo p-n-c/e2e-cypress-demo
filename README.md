@@ -116,7 +116,7 @@ To create a single HTML report from the merge json:
 
 Single command:
 
-First require rimraf
+First add rimraf:
 
 `npm i rimraf`
 
@@ -125,3 +125,11 @@ The run
 `npm run report`
 
 NB in `npm run report:runspecs || true` the boolean ensures all scripts run even if tests fail
+
+## Lighthouse
+
+Install [cypress audit](https://github.com/mfrachet/cypress-audit) for lighthouse:
+
+`const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");`
+
+And update config and commands file as documented.
