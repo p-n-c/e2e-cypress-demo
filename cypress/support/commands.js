@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { node } from '@danhartley/emissions'
 import '@cypress-audit/lighthouse/commands'
 

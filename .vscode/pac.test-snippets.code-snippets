@@ -1,0 +1,17 @@
+{
+  "E2E test": {
+    "prefix": "pac-test",
+    "body": [
+      "describe('${1:title}', () => {",
+      "  context('${2:context:when}', () => {",
+      "    beforeEach(() => {",
+      "      cy.visit('${3:url}')",
+      "    })",
+      "    it('${4:it:then}', () => {",
+      "    })",
+      "  })",
+      "})",
+    ],
+    "description": "E2E test",
+  },
+}
