@@ -3,9 +3,13 @@ describe('Set up check', () => {
     beforeEach(() => {
       cy.visit('/')
     })
-    it('When I click on the "Human-readable sitemap" I should navigate to the sitemap page', () => {
-      cy.contains('Human-readable sitemap').click()
-      cy.url().should('include', '/sitemap')
+    context('When I click on the "Human-readable sitemap"', () => {
+      beforeEach(() => {
+        cy.contains('Human-readable sitemap').click()
+      })
+      it('Then I should navigate to the sitemap page', () => {
+        cy.url().should('include', '/sitemap')
+      })
     })
   })
 })

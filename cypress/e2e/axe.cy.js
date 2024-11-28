@@ -5,9 +5,11 @@ describe('Axe accessibility checks', () => {
     beforeEach(() => {
       cy.visit('https://p-n-c.github.io/website/accessibility/test-card.html')
     })
-    it('Then there should be no detectable a11y violations on load', () => {
-      cy.injectAxe()
-      cy.checkA11y(null, null, terminalLog)
+    context('When the page has loaded', () => {
+      it('Then there should be no detectable a11y violations on load', () => {
+        cy.injectAxe()
+        cy.checkA11y(null, null, terminalLog)
+      })
     })
   })
 
@@ -17,12 +19,14 @@ describe('Axe accessibility checks', () => {
         'https://p-n-c.github.io/website/accessibility/bad-test-card.html'
       )
     })
-    it('Then there should be no detectable a11y violations on load', () => {
-      cy.visit(
-        'https://p-n-c.github.io/website/accessibility/bad-test-card.html'
-      )
-      cy.injectAxe()
-      cy.checkA11y(null, null, terminalLog)
+    context('When the page has loaded', () => {
+      it('Then there should be no detectable a11y violations on load', () => {
+        cy.visit(
+          'https://p-n-c.github.io/website/accessibility/bad-test-card.html'
+        )
+        cy.injectAxe()
+        cy.checkA11y(null, null, terminalLog)
+      })
     })
   })
 })

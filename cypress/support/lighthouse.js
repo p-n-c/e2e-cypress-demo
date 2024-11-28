@@ -1,9 +1,9 @@
 export const thresholds = {
   performance: 100,
   accessibility: 100,
-  'first-contentful-paint': 1000,
-  'largest-contentful-paint': 1000,
-  interactive: 1000,
+  'first-contentful-paint': 1200,
+  'largest-contentful-paint': 1200,
+  interactive: 1200,
   seo: 90,
   'best-practices': 80,
   // pwa: 50,

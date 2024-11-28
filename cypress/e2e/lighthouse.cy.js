@@ -5,8 +5,10 @@ describe('Lighthouse audit', () => {
     beforeEach(() => {
       cy.visit('https://p-n-c.github.io/website')
     })
-    it('Then it should pass the Lighthouse audit', () => {
-      cy.lighthouse(thresholds)
+    context('When the page has loaded', () => {
+      it('Then it should pass the Lighthouse audit', () => {
+        cy.lighthouse(thresholds)
+      })
     })
   })
 })

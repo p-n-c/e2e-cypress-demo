@@ -5,24 +5,28 @@ describe('Abstractions example', () => {
   // Use implicit "should" assertions to capture the replaceable STATE of the interface
   // Use explicit "expect" assertions to capture the fixed PURPOSE
   context('Given I am on the home page', () => {
+    const contract = {
+      INPUT: 'green',
+      OUTPUT: {
+        name: 'green',
+        hex: '#008000',
+      },
+    }
     beforeEach(() => {
+      cy.intercept('/colours/green', JSON.stringify(contract.OUTPUT)).as(
+        'getColour'
+      )
       cy.visit('/')
     })
-    it('When I select the colour green Then I get back green colour details', () => {
-      const contract = {
-        INPUT: 'green',
-        OUTPUT: {
-          name: 'green',
-          hex: '#008000',
-        },
-      }
-      cy.intercept('/colours', JSON.stringify(contract.OUTPUT)).as('getColour')
-      // The INPUT could come from a web page or be relayed via LLM chat
-      cy.visit(`/${contract.INPUT}`)
-      cy.wait('@getColour').then(async (interception) => {
-        const colour = interception.response.body
-        // The OUTPUT could be returned to the screen or read out by LLM chat
-        expect(colour).equal(JSON.stringify(contract.OUTPUT))
+    context('When I request the colour green', () => {
+      // The request is made implicitly when the page loads
+      it('Then I receive its hex value', () => {
+        cy.wait('@getColour').then(async (interception) => {
+          // cy.intercept('/colour/green', (response) => {
+          const colour = interception.response.body
+          // The OUTPUT could be returned to the screen or read out by LLM chat
+          expect(colour).equal(JSON.stringify(contract.OUTPUT))
+        })
       })
     })
   })
