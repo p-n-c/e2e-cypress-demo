@@ -66,9 +66,9 @@ This worked as expected. We then changed the site to the default URL used when t
 - Change the site to visit in the spec to <http://localhost:1234> (or the allocated port if 1234 is in use)
 - Re-run the spec in the Cypress test runner
 
-### Continued setup
+## Continued setup
 
-## Intellisense
+### Intellisense
 
 To add intellisense, we created a `jsconfig.json` file and added:
 
@@ -78,21 +78,21 @@ To add intellisense, we created a `jsconfig.json` file and added:
 }
 ```
 
-## axe
+### axe
 
 List of Axe HTML 4.8 [rules](https://dequeuniversity.com/rules/axe/4.8) from Deque University
 
-## baseUrl
+### baseUrl
 
 Add a `baseUrl` to the `e2e` property in config when [baseUrl not set](https://docs.cypress.io/app/references/configuration#baseUrl-is-not-set)
 
-## Headless
+### Headless
 
 Run unit tests in headless mode e.g.
 
 `npm run e2e:chrome -- --spec cypress/e2e/unit-tests.cy.js`
 
-## Reporters
+### Reporters
 
 Add mochawesome reporter:
 
@@ -126,10 +126,16 @@ The run
 
 NB in `npm run report:runspecs || true` the boolean ensures all scripts run even if tests fail
 
-## Lighthouse
+### Lighthouse
 
 Install [cypress audit](https://github.com/mfrachet/cypress-audit) for lighthouse:
 
 `const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");`
 
 And update config and commands file as documented.
+
+### Experiments
+
+To run all specs, added:
+
+`experimentalRunAllSpecs: true` in `e2e` in cypress.config.js

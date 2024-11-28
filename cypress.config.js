@@ -33,6 +33,7 @@ export default defineConfig({
         })
     },
     baseUrl: 'http://localhost:1234',
+    experimentalRunAllSpecs: true,
   },
   reporter: 'mochawesome',
   reporterOptions: {
