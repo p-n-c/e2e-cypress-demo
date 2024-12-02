@@ -304,23 +304,8 @@ dt {
   gap: var(--d);
 }
 
-/* test-card  */
-
-.is-fg {
-  color: var(--bg-colour);
-  background-color: var(--fg-colour);
-}
-
-.is-bg {
-  background-color: var(--bg-colour);
-}
-
-.is-border {
-  background-color: var(--border-colour);
-}
-
-.centre {
-  text-align: center;
+.hidden {
+  display: none;
 }
 
 /* only supported in newer browsers */
