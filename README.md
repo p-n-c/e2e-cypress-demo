@@ -1,6 +1,8 @@
-# E2E client demo
+# Cypress demo project
 
-E2E client demo for workshop.
+E2E and component tests using Cypress.
+
+Created by [People and Code](https://people-and-code.com/).
 
 ## Project template
 
