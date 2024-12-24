@@ -1,7 +1,7 @@
 describe('SEO verification', () => {
   context('When I am on the home page', () => {
     beforeEach(() => {
-      cy.visit('https://p-n-c.github.io/website/')
+      cy.visit('https://people-and-code.com/')
     })
 
     context('When the page has loaded', () => {
